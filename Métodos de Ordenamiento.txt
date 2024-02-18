@@ -1,0 +1,75 @@
+Rha Emmanuel Tello Barajas
+4P
+Desarrollo de Software
+
+Métodos de Ordenamiento
+
+1. Ordenamiento burbuja (Bubble Sort):
+
+Es Un ordenamiento simple que funciona revisando un elemento con el siguiente y
+cambiandolos de posición si es que están en orden incorrecto.
+Este proceso se repite varias veces hasta que queden de manera ordenada y no se
+necesiten más cambios.
+
+Ejemplo del método en código java:
+
+static void ordenamientoBurbuja(int[] arreglo) {
+        int n = arreglo.length;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                if (arreglo[j] > arreglo[j+1]) {
+                    // Intercambiar arreglo[j] y arreglo[j+1]
+                    int temp = arreglo[j];
+                    arreglo[j] = arreglo[j+1];
+                    arreglo[j+1] = temp;
+                }
+            }
+        }
+    }
+
+2.Ordenamiento por selección (Selection Sort):
+
+Este método consiste en encontrar el elemento menor entre todos los elementos
+no ordenados y colocarlo al inicio, después se repite el mismo proceso con el
+resto de elementos, siempre busca unicamente entre los no ordenados, de manera
+que la cantidad de elementos en los que busca va disminuyendo.
+
+Ejemplo del método en código java:
+
+public static void selectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+3.Ordenamiento por inserción (Insertion Sort):
+
+Este método consta de ir tomamando un elemento empezando por el inicio y
+compararlo con los anteriores hasta insertarlo en el lugar donde vaya,
+de manera que los elementos mas pequeños van quedando al inicio hasta quedar
+todos acomodados.
+
+Ejemplo del método en código java:
+
+    public static void insertionSort(int[] array) {
+        int n = array.length;
+        for (int i = 1; i < n; ++i) {
+            int key = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j = j - 1;
+            }
+            array[j + 1] = key;
+        }
+    }
